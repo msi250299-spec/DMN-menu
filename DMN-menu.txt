@@ -1438,7 +1438,7 @@ var AYo6kZf,e6mxGM,FPw80r,esX8RD,NzULmZ,Gj0_x3,EfqGrDH,hHDKJR,JqeSC4,Cgp7qKG,Xcc
             display: 'none',
             boxSizing: 'border-box',
             alignSelf: 'stretch',
-            marginTop: scaled(6),
+            marginTop: scaled(3),
             background: FRAME_BG,
             border: FRAME_BORDER,
             borderRadius: scaled(9),
@@ -1686,13 +1686,7 @@ var AYo6kZf,e6mxGM,FPw80r,esX8RD,NzULmZ,Gj0_x3,EfqGrDH,hHDKJR,JqeSC4,Cgp7qKG,Xcc
         toggle('Звук нажатий', 'sound');
         slider('Громкость', 'volume', 0, 100, 5, (v) => v + '%');
 
-        section('ЭФФЕКТЫ');
-        toggle('Вспышка при клике', 'flash');
-        toggle('Свечение рамки', 'glow', applyGlow);
-        toggle('Переливание логотипа', 'logo', applyLogo);
-        toggle('Плавные анимации', 'smooth');
-        slider('Увеличение значка D', 'chipScale', 1, 1.3, 0.05, (v) => '×' + v.toFixed(2));
-
+       
         section('AFK');
         slider('Интервал', 'afkInterval', 10, 90, 1, (v) => v + ' с');
         slider('Разброс ±', 'afkJitter', 0, 9, 1, (v) => v + ' с');
@@ -1700,16 +1694,11 @@ var AYo6kZf,e6mxGM,FPw80r,esX8RD,NzULmZ,Gj0_x3,EfqGrDH,hHDKJR,JqeSC4,Cgp7qKG,Xcc
 
         section('БОЙ');
         toggle('Сворачивать в бою', 'battleCollapse');
-        slider('Высота значка в бою', 'battleY', 30, 90, 1, (v) => v + '%');
+  
 
-        const hint = text('Закрыть: зажать шапку DMN, Esc или СКРЫТЬ', {
-            fontSize: scaled(7.5),
-            color: 'rgba(243,236,221,0.45)',
-            whiteSpace: 'normal',
-            lineHeight: '1.35'
-        });
 
-        scroll.appendChild(hint);
+
+       
 
         const actions = document.createElement('div');
 
@@ -1725,7 +1714,7 @@ var AYo6kZf,e6mxGM,FPw80r,esX8RD,NzULmZ,Gj0_x3,EfqGrDH,hHDKJR,JqeSC4,Cgp7qKG,Xcc
             refreshSettings();
         }));
 
-        actions.appendChild(actionButton('СКРЫТЬ', () => closeSettings()));
+        
 
         scroll.appendChild(actions);
 
